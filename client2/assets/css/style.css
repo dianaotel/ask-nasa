@@ -153,3 +153,7 @@ input {
     margin-left: 0px;
   }
 }
+
+img.reply-img {
+  width: 540px;
+}
