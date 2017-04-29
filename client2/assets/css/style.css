@@ -1,0 +1,155 @@
+body {
+  font:12px arial;
+  color: #222;
+  text-align:center;
+  padding:35px;
+  background-image: url(../img/background/2.jpg);
+  background-repeat: no-repeat;
+  background-position-y: -1000px;
+}
+  
+#content {
+  width: 800px;
+  background: white;
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  padding-top: 20px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+form, p, span {
+  margin:0;
+  padding:0; 
+}
+  
+input { font:12px arial; }
+  
+a {
+  color:#0000FF;
+  text-decoration:none; 
+}
+  
+a:hover { text-decoration:underline; }
+  
+#chatbox {
+  margin:0 auto;
+  margin-bottom: 18px;
+  padding:10px;
+  width: 580px;
+  overflow:auto;
+/*  background:#fff;
+  height:270px;
+  border:1px solid #ACD8F0;
+  border-top: 0px;
+  border-bottom: 0px;*/
+  background-color: #f9fafc;
+  border-radius: 12px;
+  max-height: 500px;
+  padding-top: 15px;
+}
+
+#chatbox::-webkit-scrollbar { 
+  display: none; 
+}
+  
+#usermsg {
+  width: 562px;
+  border:1px solid #ACD8F0;
+  padding: 0 18px;
+  font-size: 15px;
+}
+
+#logo {
+  height: 67px;
+  margin-bottom: 27px;
+}
+
+input {
+  height: 39px;
+}
+
+#submit_btn {
+  visibility: hidden;
+  width: 0px;
+  padding: 0px;
+  border: 0px;
+}
+#chatbox .message {
+  overflow: auto;
+  margin-bottom: 10px;
+  overflow-x: hidden;
+}
+#chatbox .message div {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 16px;
+  max-width: 93%;
+}
+
+#chatbox .message div.bot {
+  float: left;
+  border-top-left-radius: 1px;
+  /*background-color: #f3f3f3;*/
+  background-color: white;
+  color: #848484;
+  border: 1px solid #f7f7f7;
+  animation: bounceRight 0.5s;
+}
+#chatbox .message div.user {
+  float: right;
+  border-top-right-radius: 1px;
+  /*background-color: #e2f1ff;
+  color: #848484;*/
+  background-color: #2a5781;
+  color: white;
+  animation: bounceLeft 0.5s;
+  /*animation: bounceIn 1s;*/
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceLeft {
+  0% {
+    opacity: 0;
+    margin-right: -20px;
+  }
+  60% {
+    opacity: 1;
+    margin-right: 5px;
+  }
+  100% {
+    margin-right: 0px;
+  }
+}
+
+@keyframes bounceRight {
+  0% {
+    opacity: 0;
+    margin-left: -20px;
+  }
+  60% {
+    opacity: 1;
+    margin-left: 5px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
