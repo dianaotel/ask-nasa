@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ask Nasa v1</title>
+
+        <link rel="stylesheet" href="style1.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div id="header">
+                <div id="title">ask NASA</div>
+            </div>
+            <div id="chat">
+                <div class="chat-item answer">
+                    <div class="answer-content">
+                        Hello! I'm NASA Data Bot! Ask me anything
+                    </div>
+                </div>
+                <div class="chat-item question">About global temperature data</div>
+                <div class="chat-item answer">
+                    <div class="answer-ref">answer 1</div>
+                    <div class="answer-content">
+                        The global surface temperature relative to 1951-1980 average temperatures
+                    </div>
+                </div>
+                <div class="chat-item question">Show global temperature column names</div>
+                <div class="chat-item answer">
+                    <div class="answer-ref">answer 2</div>
+                    <div class="answer-content">
+                        <pre>
+id
+category
+year
+month
+day
+x
+y
+key
+error_margin
+display_on_rollover
+status
+created_at
+updated_at
+updated_by
+y_margin_max
+y_margin_min
+units</pre>
+                    </div>
+                </div>
+
+                <div class="chat-item question">what is the average global temperature between 1998 and 2016</div>
+                <div class="chat-item answer">
+                    <div class="answer-ref">answer 3</div>
+                    <div class="answer-content">
+                        <div class="answer">
+                            <div class="answer-ref">value</div>
+                            <div class="answer-content">
+                                0.99
+                            </div>
+                        </div>
+                        <div class="answer">
+                            <div class="answer-ref">unit</div>
+                            <div class="answer-content">
+                                C
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-item question">convert answer 3 unit in fahrenheit</div>
+                <div class="chat-item answer">
+                    <div class="answer-ref">answer 4</div>
+                    <div class="answer-content">
+                        <div class="answer">
+                            <div class="answer-ref">value</div>
+                            <div class="answer-content">
+                                33.8
+                            </div>
+                        </div>
+                        <div class="answer">
+                            <div class="answer-ref">unit</div>
+                            <div class="answer-content">
+                                F
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-item question">average global temperature between 1880 and 2016 over 5 years</div>
+                <div class="chat-item answer">
+                    <div class="answer-ref">answer 5</div>
+                    <div class="answer-content">
+                        <pre>
+-0.13
+-0.16
+-0.19
+-0.21
+-0.24
+-0.26
+-0.27
+-0.27
+-0.27
+-0.26
+-0.26
+-0.26
+-0.27
+-0.27
+...
+                        </pre>
+                    </div>
+                </div>
+                <div class="chat-item question">plot global temperature between 1880 and 2016 and answer 5</div>
+                <div class="chat-item answer">
+                    <div class="answer-ref">answer 6</div>
+                    <div class="answer-content">
+                        <img class="answer-image" src="./global-temp.png" alt="global temperature between 2006 and 2016">
+                    </div>
+                </div>
+                <div class="chat-item question">set answer 6 x axis to year</div>
+                <div class="chat-item answer">
+                    <div class="answer-ref">answer 7</div>
+                    <div class="answer-content">
+                        <img class="answer-image" src="./global-temp.png" alt="global temperature between 2006 and 2016">
+                    </div>
+                </div>
+                <div class="chat-item question">set answer 6 y axis to Temperature Anomaly (C)</div>
+                <div class="chat-item answer">
+                    <div class="answer-ref">answer 8</div>
+                    <div class="answer-content">
+                        <img class="answer-image" src="./global-temp.png" alt="global temperature between 2006 and 2016">
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div id="input">
+                    <input id="filter" type="text" placeholder="ask nasa"/>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
