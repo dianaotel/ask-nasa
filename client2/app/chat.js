@@ -6,19 +6,19 @@ var userMessage = "";
 var smallTalk = ['hellos','botName','leave','confirmation','whoIAm','introduction','thanks'];
 var replies = {
   hellos: {
-    trigger: ['hello','hey','greetings','good morning','hola','good afternoon', 'good evening', 'hei', 'hi ', 'hi!'],
+    trigger: ['hello','hey','greetings','good morning','good afternoon', 'good evening', 'hei', 'hi ', 'hi!'],
     reply: ['Hello','Hey','Hi','Greetings'],
   },
   botName: {
     trigger: ['curiositybot', 'curiositybot?', 'bot', 'bot?'],
-    reply: ['what', 'what?', 'yes?', 'hm?', 'que?', 'yes honey', 'that is me, yes.']
+    reply: ['what', 'what?', 'yes?', 'hm?', 'that is me, yes.']
   },
   confirmation: {
     reply: ['yes', 'that\'s right', 'yep']
   },
   whoIAm: {
     trigger: ['who are you', 'what are you', 'who you are', 'what you are', 'who is curiositybot', 'what is curiositybot', 'who curiositybot is', 'what curiositybot is'],
-    reply: ['I am CuriosityBot, <insert description here>']
+    reply: ['I am CuriosityBot, NASA\'s assistant for showing you processed data about the Earth.']
   },
   leave: {
     trigger: ['goodbye', 'bye'],
@@ -37,7 +37,10 @@ var userName = false;
 var empty_space = '____';
 var chatHistory = [];
 
+//--------------------------------------
+//DISABLE runDemo() TO USE BOT NORMALLY
 runDemo();
+//--------------------------------------
 
 function addMessage() {
   updateChat(generateHTMLEntry(userMessage, 'user'));
@@ -52,6 +55,13 @@ function updateChat(entry) {
 
   var chatBox = document.getElementById("chatbox");
   chatBox.scrollTop = chatBox.scrollHeight;
+  // chatbox.scrollTop = chatbox.getBoundingClientRect().height;
+  if (entry.indexOf('<img ') !== -1) {
+    setTimeout(function(){
+      chatBox = document.getElementById("chatbox");
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }, 300);
+  }
   index++;
 };
 
@@ -91,14 +101,8 @@ function updateChatHistory(message, sender) {
 };
 
 
-//---------------------HELPER FUNCTIONS
-
 function updateMessage() {
   userMessage = document.getElementById("usermsg").value;
-};
-
-$.fn.scrollBottom = function() { 
-  return $(document).height() - this.scrollTop() - this.height(); 
 };
 
 function LMGTFY(question) {
@@ -225,14 +229,39 @@ function runDemo() {
   var timer = 0;
   var counter = 0;
   for (var i=0; i < dialogue.length; i++) {
-    timer = timer + 3000;
+    timer = timer + 5000;
     setTimeout(function(){
       var sender = 'bot';
       if (counter > 0 && counter%2) {
         sender = 'user';
+        var kount = counter;
+        simulateTyping(dialogue[counter], function() {
+          updateChat(generateHTMLEntry(dialogue[kount], sender));
+        });
       }
-      updateChat(generateHTMLEntry(dialogue[counter], sender));
+      else {
+        updateChat(generateHTMLEntry(dialogue[counter], sender));
+      }
       counter++;
     }, timer);
   }
 };
+
+function simulateTyping(text, callback) {
+  var inputElement = document.getElementById("usermsg");
+  var timer = 0;
+  var counter = 0;
+  for (var i=0; i < text.length; i++) {
+    timer = timer + 40;
+    setTimeout(function(){
+      if (!inputElement.value) {
+        inputElement.value = "";
+      }
+      inputElement.value = inputElement.value + text[counter];
+      counter++;
+      if (counter==text.length) {
+        callback();
+      }
+    }, timer);
+  }
+}
