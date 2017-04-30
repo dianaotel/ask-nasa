@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Roadmap</title>
+
+        <style media="screen">
+         @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+            html, body {
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            * {
+                font-family: 'Source Sans Pro', sans-serif;
+            }
+            .container {
+                display: flex;
+                flex-flow: column;
+            }
+            .cell {
+                text-align: center;
+                /*border-left: solid 2px black;
+                border-bottom: solid 1px rgba(0,0,0,0.5);*/
+            }
+            #t1 {
+            }
+            #t1 > .rm {
+                background-color: rgba(233,81,14,0.5);
+            }
+            #t2 {
+                margin-left: 25%;
+            }
+            #t2 > .rm {
+                background-color: rgba(252,197,19,0.5);
+            }
+            #t3 {
+                margin-left: 50%
+            }
+            #t3 > .rm {
+                background-color: rgba(82,191,211,0.5);
+            }
+            #t4 {
+                margin-left: 75%
+            }
+            #t4 > .rm {
+                background-color: rgba(204,206,0,0.5);
+            }
+            .rm {
+                width: 450px;
+                /*width: 25vw;*/
+                padding: 15px;
+                font-size: 20px;
+            }
+            .long {
+                width: 100%;
+            }
+
+            #header {
+                display: flex;
+                flex-flow: row;
+                justify-content: space-around;
+                border-bottom: solid 3px black;
+                text-align: center;
+            }
+            .colname {
+                font-weight: bold;
+                padding: 15px;
+            }
+            #c1 {
+                background-color: rgba(233,81,14,0.5);
+                width: 450px;
+            }
+            #c2 {
+                background-color: rgba(252,197,19,0.5);
+                width: 450px;
+            }
+            #c3 {
+                background-color: rgba(82,191,211,0.5);
+                width: 450px;
+            }
+            #c4 {
+                background-color: rgba(204,206,0,0.5);
+                width: 450px;
+            }
+            .sh {
+                /*box-shadow: 5px 0 0 black;*/
+
+            }
+            .commercial {
+                display: flex;
+                flex-flow: row;
+                width: 100%;
+                font-size: 20px;
+                /*margin-top: 70px;*/
+            }
+            #comm1 {
+                width: 920px;
+                text-align: right;
+                border-right: dotted 1px black;
+                padding: 100px 0;
+                padding-right: 30px;
+            }
+            #comm2 {
+                width: 920px;
+                text-align: right;
+                padding: 100px 0;
+                border-right: dotted 1px black;
+                padding-right: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <div id="c1" class="colname">Now</div>
+            <div id="c2" class="colname">+ 2 months</div>
+            <div id="c3" class="colname">+ 4 months</div>
+            <div id="c4" class="colname">+ 6 months</div>
+        </div>
+        <div class="container">
+            <div class="container sh">
+                <div id="t1" class="cell">
+                    <div class="rm">Define Use Cases</div>
+                    <div class="rm">Investigate possible technologies</div>
+                    <div class="rm">Define a subset of Natural Language</div>
+                </div>
+            </div>
+            <div class="container sh">
+                <div id="t2" class="cell">
+                    <div class="rm">Create a prototype</div>
+                    <div class="rm">Basic Data Visualization</div>
+                    <div class="rm">Basic stats and math operations</div>
+                    <div class="rm long">Research and Development in Natural Language Processing and Programming</div>
+                </div>
+            </div>
+            <div class="container sh">
+                <div id="t3" class="cell">
+                    <div class="rm">Support for speech to text</div>
+                    <div class="rm long">Connect to more data sources and data processing tools (python, excel etc.)</div>
+                </div>
+            </div>
+            <div class="container sh">
+                <div id="t4" class="cell">
+                    <div class="rm">Add collaborative features</div>
+                    <div class="rm">Integrate with client's custom data and use cases</div>
+                </div>
+            </div>
+            <div class="commercial">
+                <div id="comm1">Beta Version</div>
+                <div id="comm2">Commercial Version<br/>Subscription based</div>
+            </div>
+        </div>
+    </body>
+</html>
